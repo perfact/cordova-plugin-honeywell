@@ -1,0 +1,20 @@
+{
+  "name": "cordova-plugin-honeywell",
+  "version": "1.0.0",
+  "description": "Honeywell Scanner Plugin",
+  "types": "./types/index.d.ts",
+  "cordova": {
+    "id": "cordova-plugin-honeywell",
+    "platforms": [
+      "android"
+    ]
+  },
+  "scripts": {
+  },
+  "engines": {
+  },
+  "author": "PerFact Innovation",
+  "license": "GPL-2.0-only",
+  "devDependencies": {
+  }
+}

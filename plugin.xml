@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-honeywell" version="1.0.0">
+
+    <name>cordova-plugin-honeywell</name>
+
+    <description>A Honeywell barcode scanner plugin</description>
+    <license>GPL-2.0-only</license>
+    <keywords>cordova, plugin, honeywell</keywords>
+    <repo>https://git.perfact.de/Playground/cordova-example-plugin.git</repo>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <platform name="android">
+        <source-file src="src/android/HoneywellScanner.java" target-dir="src/de/perfact/cordova/honeywell" />
+        <source-file src="src/android/BarcodeAPI_V1_1_60.jar" target-dir="app/libs" />
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="HoneywellScanner">
+                <param name="android-package" value="de.perfact.cordova.honeywell.HoneywellScanner" />
+            </feature>
+        </config-file>
+
+        <js-module src="www/honeywellscanner.js" name="HoneywellScanner">
+            <clobbers target="window.HoneywellScanner" />
+        </js-module>
+    </platform>
+
+</plugin>
