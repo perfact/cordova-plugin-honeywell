@@ -15,7 +15,6 @@
 
     <platform name="android">
         <source-file src="src/android/HoneywellScanner.java" target-dir="src/de/perfact/cordova/honeywell" />
-        <source-file src="src/android/BarcodeAPI_V1_1_60.jar" target-dir="app/libs" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="HoneywellScanner">
