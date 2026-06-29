@@ -11,7 +11,10 @@ import org.json.JSONException;
 
 public class HoneywellScanner extends CordovaPlugin {
 
-    private static final String HONEYWELL_PACKAGE = "com.honeywell.aidc";
+    // The DataCollection service that receives these broadcasts is the Intermec-heritage
+    // service, NOT "com.honeywell.aidc" (which is only the SDK's Java namespace). Targeting
+    // the wrong package makes sendBroadcast() a silent no-op.
+    private static final String DATACOLLECTION_PACKAGE = "com.intermec.datacollectionservice";
     private static final String ACTION_CLAIM   = "com.honeywell.aidc.action.ACTION_CLAIM_SCANNER";
     private static final String ACTION_RELEASE = "com.honeywell.aidc.action.ACTION_RELEASE_SCANNER";
 
@@ -76,7 +79,7 @@ public class HoneywellScanner extends CordovaPlugin {
             intent.putExtra(EXTRA_SCANNER, SCANNER_IMAGER);
             intent.putExtra(EXTRA_PROPERTIES, properties);
         }
-        intent.setPackage(HONEYWELL_PACKAGE);
+        intent.setPackage(DATACOLLECTION_PACKAGE);
         cordova.getActivity().getApplicationContext().sendBroadcast(intent);
     }
 
